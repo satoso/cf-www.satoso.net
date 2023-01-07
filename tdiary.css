@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* base css */
+@import url(https://www.satoso.net/base.css);
+
+body.update .whole-content {
+  /* 更新画面はプレビューが横並びで表示されるようにする */
+  width: 92%;
+}
+
+div.adminmenu {
+  text-align: right;
+  font-size: 92%;
+}
+
+h1 {
+  font-size: 140%;
+  font-weight: normal;
+  margin: 0.6em 0;
+  text-align: center;
+}
+
+h1,
+h1 a,
+h1 a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+h2 {
+  margin: 0.8em 0;
+  font-weight: 500;
+}
+
+hr.sep { display: none; }
+
+.calendar {
+  text-align: right;
+  margin: 0.4em 0;
+}
+
+.day { margin: 0 0 3em 0; }
+.day .section { margin: 0.8em 0; }
+.day p { margin: 0.8em 0; }
+
+.day img {
+  max-width: 100%;
+  border: 1px solid #eee;
+}
+
+.day blockquote {
+  margin: 0.8em 0;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 0 4%;
+}
+
+/* <hr> decoration */
+/* ref: http://hail2u.net/blog/webdesign/swap-hr-element-with-characters.html */
+.day hr {
+  margin: 0.8em auto;
+  border: none;
+  position: relative;
+  clear: both;
+  width: 100%;
+  height: 1em;
+  background-color: transparent;
+  box-sizing: content-box;
+}
+.day hr:before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1em;
+  line-height: 1em;
+  content: "\002a";
+  color: #000;
+  font-size: 100%;
+  text-align: center;
+}
+/* <hr> decoration end */
+
+.footer {
+  margin-top: 1em;
+  font-size: 82%;
+}
+
+div.form {
+  text-align: left;  /* justifyしない */
+}
+
+textarea {
+  font-family: monospace;
+  font-size: 14px;
+  height: 28em;
+}
+
+@media screen and (max-width:667px) {
+  body.update .preview-container div.day,
+  body.update .preview-container div.day textarea {
+    /* previewプラグイン使用時に入力欄とプレビューが画面からはみ出さないようにする */
+    width: 100%;
+  }
+}
+
+/* ダークモード用 */
+@media (prefers-color-scheme: dark) {
+  h1,
+  h1 a,
+  h1 a:visited {
+    color: #eee;
+  }
+  .day img { border: 1px solid #444; }
+  .day blockquote {
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+  }
+  .day hr:before { color: #eee; }
+}

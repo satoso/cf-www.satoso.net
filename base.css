@@ -1,0 +1,103 @@
+/* Base CSS for satoso.net tDiary and Hiki */
+@charset "UTF-8";
+
+/* global reset */
+html, body, div, p, img, em, strong, q, ins, h1, h2, h3, h4, h5, h6, ul, ol, dl, dt, dd,
+nav, header, footer, section, article {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* entire site */
+body {
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  -webkit-text-size-adjust: 100%; /* 画面横向きで拡大しない */
+}
+
+.whole-content /* tDiary */ ,
+.whole-contents /* Hiki */ {
+  word-wrap: break-word; /* 長い単語やURLを折り返す */
+  color: #333;
+  line-height: 1.5;
+  padding-bottom: 2em;
+  -ms-text-autospace: ideograph-alpha;
+  text-autospace: ideograph-alpha;
+  text-justify: inter-ideograph;
+}
+.whole-content /* tDiary */ { width: 40em; max-width: 92%; margin: 1.2em auto 2em; }
+.whole-contents /* Hiki */  { width: 60em; max-width: 92%; margin: 1em auto 2em; }
+
+/* decoration */
+a { text-decoration: underline; color: #4186d3; }
+a:visited { text-decoration: underline; color: #274f7d; }
+em { font-weight: bold; text-decoration: none; }
+strong { font-weight: bold; text-decoration: underline; }
+ul, ol { margin: 0.6em 0 0.6em 1.4em; }
+ol { padding-left: 0.4em; }
+ul ul, ul ol, ol ul, ol ol { margin: 0 0 0 1.4em; }
+q:before { content: open-quote; }
+q:after { content: close-quote; }
+q {
+  border-bottom: 1px solid #ccc;
+  quotes: "「" "」" "『" "』";
+}
+ins {
+  text-decoration: none;
+  border-bottom: 1px dashed #999;
+}
+code, pre { font-family: Menlo, Monaco, Consolas, monospace; }
+code {
+  padding: .15em .5em;
+  font-size: 90%;
+  color: #bf616a;
+  background-color: #f9f2f4;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin: 0 0 14px;
+  padding: 10px 20px;
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #eee;
+}
+pre code {
+  padding: 0;
+  font-size: 80%;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* 狭い画面用 */
+@media screen and (max-width:480px) {
+  .whole-content /* tDiary */ ,
+  .whole-contents /* Hiki */ {
+    margin-top: 0.8em;
+    max-width: 94%;
+    font-size: 92%;
+  }
+  span.adminmenu { white-space: nowrap; /* 途中で改行しない */ }
+}
+
+/* ダークモード用 */
+@media (prefers-color-scheme: dark) {
+  body { background-color: #222; }
+  .whole-content /* tDiary */ ,
+  .whole-contents /* Hiki */ {
+    color: #eee;
+  }
+  a { color: #87C3E9; }
+  a:visited { color: #7195B1; }
+  q { border-bottom: 1px solid #555; }
+  code { color: #DFA2AA; background-color: #676162; }
+  pre { background-color: #555; }
+}
